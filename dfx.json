@@ -1,0 +1,39 @@
+{
+  "canisters": {
+    "frontend-creditopia-backend": {
+      "build": "npx azle frontend-creditopia-backend",
+      "candid": "src/frontend-creditopia-backend/frontend-creditopia-backend.did",
+      "gzip": true,
+      "main": "src/frontend-creditopia-backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/frontend-creditopia-backend/frontend-creditopia-backend.wasm"
+    },
+    "frontend-creditopia-frontend": {
+      "dependencies": [
+        "frontend-creditopia-backend"
+      ],
+      "source": [
+        "src/frontend-creditopia-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "frontend-creditopia-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
